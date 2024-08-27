@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery/view/home/homeview.dart';
 
 class Getstarted extends StatefulWidget {
   const Getstarted({super.key});
@@ -47,7 +48,10 @@ class _GetstartedState extends State<Getstarted> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(5)),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Homeview()));
+                  },
                   child: const Text(
                     "Get Started",
                     style: TextStyle(

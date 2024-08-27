@@ -19,6 +19,6 @@ class MyApp extends StatelessWidget {
               seedColor: Colors.deepPurple, brightness: Brightness.dark),
           useMaterial3: true,
         ),
-        home: const Getstarted());
+        home: Getstarted());
   }
 }
