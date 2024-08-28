@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocery/view/cart/cartview.dart';
+import 'package:grocery/view/home/homeview.dart';
 import 'package:grocery/viewmodel/homeviewmodel.dart';
 import 'package:provider/provider.dart';
 
@@ -13,15 +14,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(create: (context) => Homeviewmodel(),child: MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.deepPurple, brightness: Brightness.dark),
-        useMaterial3: true,
+    return ChangeNotifierProvider(
+      create: (context) => Homeviewmodel(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.deepPurple, brightness: Brightness.dark),
+          useMaterial3: true,
+        ),
+        home: const Homeview(),
       ),
-      home: const Cartview(),
-    ),);
+    );
   }
 }

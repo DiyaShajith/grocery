@@ -6,6 +6,13 @@ class Homeviewmodel extends ChangeNotifier {
   List<Grocerymodel> get cartlist => _cartlist;
   void addcart(Grocerymodel groceryitem) {
     _cartlist.add(groceryitem);
+
+    notifyListeners();
+  }
+
+  void removecart(Grocerymodel groceryitem) {
+    _cartlist.remove(groceryitem);
+
     notifyListeners();
   }
 }

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:grocery/res/utils/grocerylist.dart';
+import 'package:grocery/view/cart/cartview.dart';
+import 'package:grocery/viewmodel/homeviewmodel.dart';
+import 'package:provider/provider.dart';
 
 class Homeview extends StatefulWidget {
   const Homeview({super.key});
@@ -12,16 +15,18 @@ class _HomeviewState extends State<Homeview> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
+    final homePRovider = Provider.of<Homeviewmodel>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: true,
-        actions: const [
-          Padding(
-            padding: EdgeInsets.all(16),
-            child: Icon(
-              Icons.shopping_cart_outlined,
-            ),
-          ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Cartview()));
+            },
+            icon: Icon(Icons.shopping_cart),
+          )
         ],
       ),
       body: Column(
@@ -59,7 +64,9 @@ class _HomeviewState extends State<Homeview> {
                           children: [
                             Text(grocerylist[index].itemname),
                             IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                homePRovider.addcart(grocerylist[index]);
+                              },
                               icon: const Icon(
                                 Icons.shopping_cart_outlined,
                               ),
