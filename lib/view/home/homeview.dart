@@ -40,7 +40,7 @@ class _HomeviewState extends State<Homeview> {
                   maxCrossAxisExtent: 200,
                   crossAxisSpacing: 5,
                   mainAxisSpacing: 5,
-                  mainAxisExtent: 220),
+                  mainAxisExtent: 230),
               itemBuilder: (context, index) => Card(
                 child: Container(
                     padding: const EdgeInsets.all(8),
@@ -52,14 +52,17 @@ class _HomeviewState extends State<Homeview> {
                           height: 150,
                         ),
                         const SizedBox(
-                          height: 20,
+                          height: 10,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(grocerylist[index].itemname),
-                            const Icon(
-                              Icons.shopping_cart_outlined,
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.shopping_cart_outlined,
+                              ),
                               color: Colors.white,
                             ),
                             Text(grocerylist[index].itemprice)
