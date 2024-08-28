@@ -60,7 +60,7 @@ class _HomeviewState extends State<Homeview> {
                             Text(grocerylist[index].itemname),
                             IconButton(
                               onPressed: () {},
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.shopping_cart_outlined,
                               ),
                               color: Colors.white,

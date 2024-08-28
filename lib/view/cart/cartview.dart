@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery/viewmodel/homeviewmodel.dart';
 import 'package:provider/provider.dart';
 
 class Cartview extends StatefulWidget {
@@ -13,7 +14,7 @@ class _CartviewState extends State<Cartview> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView.builder(
-          itemBuilder: (context, index) => Consumer(
+          itemBuilder: (context, index) => Consumer<Homeviewmodel>(
                 builder: (context, value, child) => Container(
                   child: Row(
                     children: [

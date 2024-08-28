@@ -50,7 +50,7 @@ class _GetstartedState extends State<Getstarted> {
                   ),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Homeview()));
+                        MaterialPageRoute(builder: (context) => const Homeview()));
                   },
                   child: const Text(
                     "Get Started",
